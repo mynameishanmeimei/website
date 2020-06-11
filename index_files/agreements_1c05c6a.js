@@ -1,0 +1,2 @@
+;/*!web:page/agreements/index.js*/
+define("web:page/agreements/index",function(){$(function(){function t(t){var e=new RegExp("(^|&)"+t+"=([^&]*)(&|$)"),n=window.location.search.substr(1).match(e);return null!=n?decodeURIComponent(n[2]):void 0}var e=t("id");$.ajax({url:"/web/api/v2/other/article/detail/?id="+e,method:"GET",success:function(t){0==t.status_code?($(".title").html(t.article_info.title),$(".douyin").html(t.article_info.content)):$(".douyin").html("未找到该协议")},error:function(){$(".douyin").html("未找到该协议")}})})});
